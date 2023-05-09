@@ -49,3 +49,38 @@
     }
   })
 })()
+
+const buttons_dashboard = document.querySelector('.button-dashboard');
+const buttons_order = document.querySelector('.button-orders');
+const buttons_product = document.querySelector('.button-product');
+const buttons_customer = document.querySelector('.button-customer');
+const buttons_report = document.querySelector('.button-report');
+const buttons_integration = document.querySelector('.button-integration');
+const buttons_dataUser = document.querySelector('.button-dataUser');
+const buttons_dataPenjual = document.querySelector('.button-dataPenjual');
+const buttons_dataBibit = document.querySelector('.button-dataBibit');
+const buttons_dataPesanan = document.querySelector('.button-dataPesanan');
+
+
+
+buttons_dashboard.addEventListener('click', ()=>{
+  buttons_dashboard.classList.add('active');
+})
+buttons_order.addEventListener('click', ()=>{
+  buttons_order.classList.add('active');
+  buttons_dashboard.classList.remove('active');
+})
+
+// buttons.forEach(button => {
+//   button.addEventListener('click', () => {
+//     // tambahkan kelas "active" ke tombol yang ditekan
+//     button.classList.add('active');
+
+//     // hapus kelas "active" dari tombol yang lain
+//     buttons.forEach(otherButton => {
+//       if (otherButton !== button) {
+//         otherButton.classList.remove('active');
+//       }
+//     });
+//   });
+// });

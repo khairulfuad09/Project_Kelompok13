@@ -17,7 +17,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('dashboard');
 });
+Route::get('/product', function () {
+    return view('penjual.Product');
+});
+Route::get('/customer', function () {
+    return view('penjual.customer');
+});
 Route::get('/sign', function () {
     return view('login');
-});
+})->middleware('guest');
+Route::get('/sign2', function () {
+    return view('login2');
+})->middleware('guest');
 Route::post('/login', [loginController::class, 'authenticate']);
+Route::post('/register', [loginController::class, 'store']);
+Route::post('/logout', [loginController::class, 'logout']);

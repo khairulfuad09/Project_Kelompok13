@@ -8,6 +8,7 @@
     <title>Login</title>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/login1.css" rel="stylesheet">
+    {{-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> --}}
 
 </head>
 @if (session()->has('success'))
@@ -23,7 +24,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 @endif
-<div class="global-container">
+{{-- <div class="global-container">
 
     <div class="card Login-form">
         <div class="card-body">
@@ -50,11 +51,85 @@
                     <input type="password" class="form-control" id="password" placeholder="Password" name="password">
                 </div>
                 <button type="submit" class="btn btn-primary">Login</button>
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <a href="/register" class="btn btn-primary">Sign in</a>
             </form>
         </div>
     </div>
+</div> --}}
+<div class="login-reg-panel">
+    <div class="login-info-box">
+        <h2>Have an account?</h2>
+        <p>Lorem ipsum dolor sit amet</p>
+        <label id="label-register" for="log-reg-show">Login</label>
+        <input type="radio" name="active-log-panel" id="log-reg-show" checked="checked">
+    </div>
+
+    <div class="register-info-box">
+        <h2>Don't have an account?</h2>
+        <p>Lorem ipsum dolor sit amet</p>
+        <label id="label-login" for="log-login-show">Register</label>
+        <input type="radio" name="active-log-panel" id="log-login-show">
+    </div>
+
+    <div class="white-panel">
+        <form action="/login" method="post">
+            @csrf
+            <div class="login-show">
+                <h2>LOGIN</h2>
+                <input type="email" placeholder="Email" name="email"
+                    class="@error('email')
+                    is-invalid
+                @enderror">
+                @error('email')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+                <input type="password" placeholder="Password" name="password">
+                <input type="submit" value="Login">
+                <a href="">Forgot password?</a>
+            </div>
+        </form>
+        <div class="register-show">
+            <h2>REGISTER</h2>
+            {{-- <input type="text" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Confirm Password"> --}}
+            <a href="/sign2"><input type="submit" value="Register"></a>
+        </div>
+    </div>
 </div>
+
+{{--  --}}
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.login-info-box').fadeOut();
+        $('.login-show').addClass('show-log-panel');
+    });
+
+
+    $('.login-reg-panel input[type="radio"]').on('change', function() {
+        if ($('#log-login-show').is(':checked')) {
+            $('.register-info-box').fadeOut();
+            $('.login-info-box').fadeIn();
+
+            $('.white-panel').addClass('right-log');
+            $('.register-show').addClass('show-log-panel');
+            $('.login-show').removeClass('show-log-panel');
+
+        } else if ($('#log-reg-show').is(':checked')) {
+            $('.register-info-box').fadeIn();
+            $('.login-info-box').fadeOut();
+
+            $('.white-panel').removeClass('right-log');
+
+            $('.login-show').addClass('show-log-panel');
+            $('.register-show').removeClass('show-log-panel');
+        }
+    });
+</script>
 
 </body>
 
