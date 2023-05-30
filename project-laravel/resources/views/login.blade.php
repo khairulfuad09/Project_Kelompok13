@@ -11,6 +11,7 @@
     {{-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> --}}
 
 </head>
+<body>
 @if (session()->has('success'))
     <div class="alert alert-succes alert-dismissible fade show" role="alert">
         {{ session('success') }}
@@ -58,16 +59,14 @@
 </div> --}}
 <div class="login-reg-panel">
     <div class="login-info-box">
-        <h2>Have an account?</h2>
-        <p>Lorem ipsum dolor sit amet</p>
-        <label id="label-register" for="log-reg-show">Login</label>
+        <h2>Sudah Mempunyai Akun?</h2>
+        <label id="label-register" for="log-reg-show">Masuk</label>
         <input type="radio" name="active-log-panel" id="log-reg-show" checked="checked">
     </div>
 
     <div class="register-info-box">
-        <h2>Don't have an account?</h2>
-        <p>Lorem ipsum dolor sit amet</p>
-        <label id="label-login" for="log-login-show">Register</label>
+        <h2>Belum Mempunyai Akun?</h2>
+        <label id="label-login" for="log-login-show">Klik Disini</label>
         <input type="radio" name="active-log-panel" id="log-login-show">
     </div>
 
@@ -75,7 +74,7 @@
         <form action="/login" method="post">
             @csrf
             <div class="login-show">
-                <h2>LOGIN</h2>
+                <h2>Masuk</h2>
                 <input type="email" placeholder="Email" name="email"
                     class="@error('email')
                     is-invalid
@@ -86,16 +85,16 @@
                     </div>
                 @enderror
                 <input type="password" placeholder="Password" name="password">
-                <input type="submit" value="Login">
-                <a href="">Forgot password?</a>
+                <input type="submit" value="Masuk">
+                <a href="">Lupa Password?</a>
             </div>
         </form>
         <div class="register-show">
-            <h2>REGISTER</h2>
+            <h2>Ayo Daftar!</h2>
             {{-- <input type="text" placeholder="Email">
             <input type="password" placeholder="Password">
             <input type="password" placeholder="Confirm Password"> --}}
-            <a href="/sign2"><input type="submit" value="Register"></a>
+            <a href="/sign2"><input type="submit" value="Klik Disini!"></a>
         </div>
     </div>
 </div>

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\PenjualController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +34,7 @@ Route::get('/sign2', function () {
 Route::post('/login', [loginController::class, 'authenticate']);
 Route::post('/register', [loginController::class, 'store']);
 Route::post('/logout', [loginController::class, 'logout']);
+// Route::get('/user', [UserController::class, 'index']);
+// Route::get('/penjual', [PenjualController::class, 'index']);
+Route::resource('/penjual', PenjualController::class);
+Route::resource('/user', UserController::class);

@@ -65,7 +65,6 @@
         </li>
     </ul>
 </div> --}}
-
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap shadow">
     <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Company name</a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
@@ -76,27 +75,30 @@
         aria-label="Search">
     <div class="navbar-nav">
         @auth
+
             <form action="/logout" method="post">
                 @csrf
                 <div class="nav-item text-nowrap">
                     {{-- <a class="nav-link px-3" href="/logout">Log out</a> --}}
-                    <Button class="nav-link px-3">Log out</Button>
+                    <Button class="nav-link px-3">Keluar</Button>
+
                 </div>
             </form>
         @endauth
         @guest
             <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="/sign">Login</a>
+                <a class="nav-link px-3" href="/sign">Masuk</a>
             </div>
         @endguest
 
     </div>
+
 </header>
 
-<div class="container-fluid bg-blue">
+<div class="container">
     <div class="row">
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse">
-            <div class="position-sticky pt-3 sidebar-sticky bg-bluesky">
+            <div class="position-sticky pt-3 sidebar-sticky bg-bluesky bg-undersea ">
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link active button-dashboard" aria-current="page" href="/">
@@ -108,7 +110,7 @@
                         <li class="nav-item">
                             <a class="nav-link button-orders" href="#">
                                 <span data-feather="file" class="align-text-bottom"></span>
-                                Orders
+                                Order
                             </a>
                         </li>
                     @endcan
@@ -116,13 +118,13 @@
                         <li class="nav-item">
                             <a class="nav-link button-product" href="/product">
                                 <span data-feather="shopping-cart" class="align-text-bottom"></span>
-                                Products
+                                Produk
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link button-customer" href="/customer">
                                 <span data-feather="users" class="align-text-bottom"></span>
-                                Customers
+                                Pembeli
                             </a>
                         </li>
                         <li class="nav-item">
@@ -148,26 +150,26 @@
                         </a>
                     </h6>
                     <ul class="nav flex-column mb-2">
-                        <li class="nav-item">
-                            <a class="nav-link button-dataUser" href="#">
+                        <li class="nav-item text-white">
+                            <a class="nav-link button-dataUser text-white" href="/user">
                                 <span data-feather="file-text" class="align-text-bottom"></span>
                                 Data User
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link button-dataPenjual" href="#">
+                            <a class="nav-link button-dataPenjual text-white" href="/penjual">
                                 <span data-feather="file-text" class="align-text-bottom"></span>
                                 Data Penjual
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link button-dataBibit" href="#">
+                            <a class="nav-link button-dataBibit text-white" href="#">
                                 <span data-feather="file-text" class="align-text-bottom"></span>
                                 Data Bibit
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link button-dataPesanan" href="#">
+                            <a class="nav-link button-dataPesanan text-white" href="#">
                                 <span data-feather="file-text" class="align-text-bottom"></span>
                                 Data Pesanan
                             </a>
@@ -177,4 +179,4 @@
             </div>
         </nav>
 
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 wd-main">

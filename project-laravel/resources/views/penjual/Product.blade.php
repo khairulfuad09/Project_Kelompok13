@@ -1,6 +1,9 @@
 @extends('partials.main')
 @section('container')
     <h1>Product</h1>
+    <button type="button" class="btn bg-bluesky tombolTambahData mb-5" data-bs-toggle="modal" data-bs-target="#formModal">
+        Tambah Product
+    </button>
     <div class="album py-5 bg-body-tertiary">
         <div class="container">
 
@@ -209,3 +212,46 @@
         </div>
     </div>
 @endsection
+
+
+<!-- Modal -->
+<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="judulModal">Tambah Product</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/motor" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="plat" class="form-label">lorem</label>
+                        <input type="text" class="form-control" id="plat" placeholder="Nomor Plat"
+                            name="plat">
+                    </div>
+                    <div class="mb-3">
+                        <label for="nama_motor" class="form-label">lorem</label>
+                        <input type="text" class="form-control" id="nama_motor" placeholder="nama_motor"
+                            name="nama_motor">
+                    </div>
+                    <div class="mb-3">
+                        <label for="alamat" class="form-label">lorem</label>
+                        <input type="text" class="form-control" id="alamat" placeholder="alamat"
+                            name="alamat">
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">lorem</label>
+                        <input type="file" class="form-control" id="image" placeholder="image"
+                            name="image">
+                    </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Tambah Product</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/dashboard.css" rel="stylesheet">
-    <link href="css/carousel.css" rel="stylesheet">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/dashboard.css" rel="stylesheet">
+    <link href="/css/carousel.css" rel="stylesheet">
+    <link href="/css/login2.css" rel="stylesheet">
+
 
     <style>
         body {
             background-color: #1d3557;
+            background-image: url('/img/deepsea.jpg');
+            color: white;
         }
 
         .bd-placeholder-img {
@@ -88,6 +90,28 @@
 
         .bd-mode-toggle {
             z-index: 1500;
+        }
+
+        .text-white {
+            color: aliceblue;
+        }
+
+        .form-tUser {
+            width: 350px;
+            border: 10px solid black;
+        }
+
+        .btn-blue {
+            background: #1d3557;
+            color: skyblue;
+        }
+        .c-black{
+            color: black;
+        }.bold{
+            font-weight: bold;
+        }.tb-center{
+            /* text-align: center; */
+            vertical-align: middle;
         }
     </style>
 </head>

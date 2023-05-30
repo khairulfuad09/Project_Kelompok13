@@ -1,6 +1,7 @@
 html, body {
     height: 100%;
-    background-color: #222d32 !important;
+    /* background-color: #222d32 !important; */
+    background-image: url(/img/sea.jpg);
 }
 .global-container {
     height: 100%;
@@ -21,26 +22,27 @@ input[type="password"] {
 } */
 
 .btn {
-    background: grey !important; 
+    background: grey ; 
     transform: translateY(10px);
     border-radius: 10px;
     border-color: black;
-    color: #222d32 !important;
+    color: #222d32 ;
 
 }
 
 /*  */
 /* @import url('https://fonts.googleapis.com/css?family=Mukta'); */
 body{
-  font-family: 'Mukta', sans-serif;
+    font-family: 'Mukta', sans-serif;
 	height:100vh;
 	min-height:550px;
-	background-image: url(http://www.planwallpaper.com/static/images/Free-Wallpaper-Nature-Scenes.jpg);
-	background-repeat: no-repeat;
+	/* background-image: url(http://www.planwallpaper.com/static/images/Free-Wallpaper-Nature-Scenes.jpg);
+	background-repeat: no-repeat; */
 	background-size:cover;
 	background-position:center;
 	position:relative;
     overflow-y: hidden;
+
 }
 a{
   text-decoration:none;

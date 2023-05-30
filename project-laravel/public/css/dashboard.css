@@ -82,7 +82,7 @@ body {
 
 .form-control-dark {
   color: #fff;
-  background-color: rgba(255, 255, 255, .1);
+  /* background-color: rgba(255, 255, 255, .1); */
   border-color: rgba(236, 48, 20, 0.9);
 }
 
@@ -93,6 +93,18 @@ body {
 .bg-blue {
   background-color: #1d3557;
 }
+.bg-blue-op25 {
+  background-color: #1d3557;
+  opacity: 0.1;
+  color: white;
+}
 .bg-bluesky {
   background-color: #457b9d;
+}
+.bg-undersea {
+  /* background-image: url('/img/undersea.jpg'); */
+  /* background-size: cover; */
+}
+.shadow{
+  box-shadow: 10cm;
 }

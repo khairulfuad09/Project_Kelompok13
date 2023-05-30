@@ -29,11 +29,12 @@ class loginController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'username' => 'required|min:5',
+            'username' => 'required|min:3',
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:3',
             'alamat' => 'required',
             'id_status' => 'required',
+            'password_confirm' => 'password',
         ]);
         $query = User::create([
             'username' => $request->username,
@@ -55,6 +56,6 @@ class loginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/sign');
+        return redirect('/');
     }
 }

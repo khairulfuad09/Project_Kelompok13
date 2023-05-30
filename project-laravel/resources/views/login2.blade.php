@@ -47,16 +47,16 @@
 
     <div class="login-reg-panel">
         <div class="login-info-box">
-            <h2>Ingin Daftar Sebagai User</h2>
+            <h2>Ingin Daftar Sebagai Pembeli?</h2>
 
-            <label id="label-register" for="log-reg-show">Click Here</label>
+            <label id="label-register" for="log-reg-show">Klik Disini!</label>
             <input type="radio" name="active-log-panel" id="log-reg-show" checked="checked">
         </div>
 
         <div class="register-info-box">
-            <h2>Ingin Menjadi Penjual</h2>
+            <h2>Ingin Menjadi Penjual?</h2>
 
-            <label id="label-login" for="log-login-show">Click Here</label>
+            <label id="label-login" for="log-login-show">Klik Disini!</label>
             <input type="radio" name="active-log-panel" id="log-login-show">
         </div>
 
@@ -64,7 +64,7 @@
             <form action="/register" method="post">
                 @csrf
                 <div class="login-show">
-                    <h2>Register Pembeli</h2>
+                    <h2>Daftar Pembeli</h2>
                     <input type="hidden" name="id_status" value="usr">
                     <input type="text" placeholder="Username" name="username"
                         class="@error('username')
@@ -102,15 +102,23 @@
                             {{ $message }}
                         </div>
                     @enderror
-                    <input type="password" placeholder="Confirm Password" name="pasword_confirm">
-                    <input type="submit" value="Register">
+                    <input type="password" placeholder="Confirm Password" name="pasword_confirm"
+                        class="@error('password_confirm')
+                        is-invalid
+                    @enderror">
+                    @error('password_confirm')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                    <input type="submit" value="Daftar">
                     <a href="/sign">Sudah Mempunyai akun?</a>
                 </div>
             </form>
             <form action="/register" method="post">
                 @csrf
                 <div class="register-show">
-                    <h2>REGISTER Penjual</h2>
+                    <h2>Daftar Penjual</h2>
                     <input type="hidden" name="id_status" value="pnj">
                     <input type="text" placeholder="Username" name="username"
                         class="@error('username')
@@ -148,8 +156,16 @@
                             {{ $message }}
                         </div>
                     @enderror
-                    <input type="password" placeholder="Confirm Password" name="password_confirm">
-                    <input type="submit" value="Register">
+                    <input type="password" placeholder="Confirm Password" name="password_confirm"
+                        class="@error('password_confirm')
+                        is-invalid
+                    @enderror">
+                    @error('password_confirm')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                    <input type="submit" value="Daftar">
                     <a href="/sign">Sudah Mempunyai akun?</a>
                 </div>
             </form>
