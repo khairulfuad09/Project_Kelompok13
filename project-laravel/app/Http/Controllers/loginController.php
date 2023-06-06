@@ -30,7 +30,7 @@ class loginController extends Controller
     {
         $request->validate([
             'username' => 'required|min:3',
-            'email' => 'required|email:dns|unique:users',
+            'email' => 'required|email',
             'password' => 'required|min:3',
             'alamat' => 'required',
             'id_status' => 'required',

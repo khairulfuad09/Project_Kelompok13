@@ -66,7 +66,7 @@
     </ul>
 </div> --}}
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Company name</a>
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Aquafish</a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
         data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -75,19 +75,17 @@
         aria-label="Search">
     <div class="navbar-nav">
         @auth
-
             <form action="/logout" method="post">
                 @csrf
                 <div class="nav-item text-nowrap">
                     {{-- <a class="nav-link px-3" href="/logout">Log out</a> --}}
-                    <Button class="nav-link px-3">Keluar</Button>
-
+                    <Button class="nav-link px-3">Logout</Button>
                 </div>
             </form>
         @endauth
         @guest
             <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="/sign">Masuk</a>
+                <a class="nav-link px-3" href="/sign">Login</a>
             </div>
         @endguest
 
@@ -163,7 +161,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link button-dataBibit text-white" href="#">
+                            <a class="nav-link button-dataBibit text-white" href="/product">
                                 <span data-feather="file-text" class="align-text-bottom"></span>
                                 Data Bibit
                             </a>

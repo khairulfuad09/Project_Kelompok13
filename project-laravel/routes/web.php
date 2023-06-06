@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\loginController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\PenjualController;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\loginController;
+use App\Http\Controllers\PenjualController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,5 +37,6 @@ Route::post('/register', [loginController::class, 'store']);
 Route::post('/logout', [loginController::class, 'logout']);
 // Route::get('/user', [UserController::class, 'index']);
 // Route::get('/penjual', [PenjualController::class, 'index']);
-Route::resource('/penjual', PenjualController::class);
+Route::PUT('/store', [PenjualController::class, 'store'])->name('Penjual.store');
 Route::resource('/user', UserController::class);
+// Route::get('/createProduct', [ProductController::class, 'create'])->name('Product.create');

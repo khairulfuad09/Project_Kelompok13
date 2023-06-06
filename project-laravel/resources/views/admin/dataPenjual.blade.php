@@ -29,6 +29,7 @@
     </table>
     {{-- Content --}}
 @endsection
+
 <!-- Modal -->
 <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
     <div class="modal-dialog">

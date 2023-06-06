@@ -48,44 +48,73 @@
 
     {{-- Content --}}
 @endsection
+
 <!-- Modal -->
 <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5 c-black" id="judulModal">Tambah Data</h1>
+                <h1 class="modal-title fs-5" id="judulModal">Tambah Data</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="/user" method="post" enctype="multipart/form-data">
                     @csrf
-                    <div class="mb-3">
-                        <label for="username" class="form-label">username</label>
-                        <input type="text" class="form-control" id="username" placeholder="username"
-                            name="username">
+                    @method('PUT')
+                    <div class="form-group row">
+                        <label for="username" class="col-sm-3 col-form-label" style="color: black">Username</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" required autofocus value="{{ old ('username') }}">
+                            @error('username')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">email</label>
-                        <input type="email" class="form-control" id="email" placeholder="email" name="email">
+                    <<span></span>
+                    <div class="form-group row">
+                        <label for="alamat" class="col-sm-3 col-form-label" style="color: black">Alamat</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat" required autofocus value="{{ old ('alamat') }}">
+                            @error('alamat')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="alamat" class="form-label">alamat</label>
-                        <input type="text" class="form-control" id="alamat" placeholder="alamat" name="alamat">
+                    <<span></span>
+                    <div class="form-group row">
+                        <label for="email" class="col-sm-3 col-form-label" style="color: black">Email</label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" required autofocus value="{{ old ('email') }}">
+                            @error('email')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">password</label>
-                        <input type="password" class="form-control" id="password" placeholder="password"
-                            name="password">
+                    <<span></span>
+                    <div class="form-group row">
+                        <label for="password" class="col-sm-3 col-form-label" style="color: black">Password</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" required autofocus value="{{ old ('password') }}">
+                            @error('password')
+                            <div class="invalid-feedback">
+                            {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
                     </div>
-                    <input type="hidden" name="id_status" value="usr">
-
-
+                    <<span></span>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Tambah data</button>
+                    </div>
+                </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Tambah data</button>
-            </div>
-            </form>
         </div>
     </div>
 </div>

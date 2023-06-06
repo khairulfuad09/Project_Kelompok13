@@ -124,9 +124,9 @@
                         class="@error('username')
                         is-invalid
                     @enderror">
-                    @error('usernmae')
+                    @error('username')
                         <div class="invalid-feedback">
-                            {{ $messgae }}
+                            {{ $message }}
                         </div>
                     @enderror
                     <input type="email" placeholder="Email" name="email"
@@ -156,7 +156,7 @@
                             {{ $message }}
                         </div>
                     @enderror
-                    <input type="password" placeholder="Confirm Password" name="password_confirm"
+                    <input type="password" placeholder="Confirm Password" name="pasword_confirm"
                         class="@error('password_confirm')
                         is-invalid
                     @enderror">
